@@ -41,12 +41,12 @@ Process = function(){
     console.log(data);
 
     var hashTime = new Date().toISOString();
-    var contentHash = CryptoJS.SHA256(myJsonString).toString(CryptoJS.enc.Hex);
+    var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
     var path = "/transaction/v12";
 
     var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
     //var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
-    var authHmac = CryptoJS.HmacSHA256(authString, hmac_key).toString(CryptoJS.enc.Base64);
+    var authHmac = CryptoJS.HmacSHA1(authString, hmac_key).toString(CryptoJS.enc.Base64);
     var authHeader = "GGE4_API" + key_id + ":" + authHmac;
 
     var gge4_date =  hashTime;
@@ -78,7 +78,7 @@ Process = function(){
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*.*");
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.setRequestHeader("x-gge4-date", headers.gge4_date);
-    xhr.setRequestHeader("x-gge4-content-sha256",headers.gge4_content_sha256);
+    xhr.setRequestHeader("x-gge4-content-sha1",headers.gge4_content_sha256);
     xhr.setRequestHeader("Authorization",headers.authorization);   
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
