@@ -31,7 +31,7 @@ Process = function(){
     var password    = elements.password;
     var key_id      = elements.key_id;
     var hmac_key    = elements.hmac_key;
-    var myJsonString = data;
+    var myJsonString = JSON.stringify(data);
     
     //console.log(gateway_id);
     //console.log(password);
