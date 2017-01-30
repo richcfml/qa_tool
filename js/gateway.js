@@ -90,7 +90,7 @@ Process = function(){
         }
     };
     //var data = JSON.stringify({"email":"hey@mail.com","password":"101010"});
-    //console.log('The data sent is: ' + data);
+    console.log('The data sent is: ' + data);
     //console.log(form_elements.headers)
     xhr.send();
     //console.log(get_form_elements());
