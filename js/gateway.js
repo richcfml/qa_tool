@@ -44,8 +44,8 @@ Process = function(){
     var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
     var path = "/transaction/v12";
 
-    //var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
-    var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
+    var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
+    //var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
     var authHmac = CryptoJS.HmacSHA1(authString, hmac_key).toString(CryptoJS.enc.Base64);
     var authHeader = "GGE4_API " + key_id + ":" + authHmac;
 
