@@ -38,7 +38,7 @@ Process = function(){
     console.log(key_id);
     console.log(hmac_key);
     console.log(endpoint_url);
-    console.log(data);
+    console.log(myJsonString);
 
     var hashTime = new Date().toISOString();
     var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
