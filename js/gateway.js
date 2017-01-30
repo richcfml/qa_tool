@@ -44,6 +44,7 @@ Process = function(){
     var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
     var parts = endpoint_url.split('/');
     var path = "/" + parts[3] + "/" + parts[4];
+    console.log('The path is: ' + path);
 
     var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
     //var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
