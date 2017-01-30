@@ -99,7 +99,19 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="payload">Payload</label>
-                                        <textarea class="form-control" name="payload" id="payload" data-gateway-field="payload"></textarea>
+                                        <textarea class="form-control" name="payload" id="payload" data-gateway-field="payload">
+{
+"amount": 1,
+"cardholder_name": "Tester Wendy",
+"cc_expiry": "0419",
+"cc_number": "4111111111111111",
+"gateway_id": "LD8898-57",
+"password": "V81jj4SwmECQnJzZ45I71hQ7qV1OHd6E",
+"transaction_type": "05",
+"cvd_presence_ind": "1",
+"cvd_code": "123"
+}
+                                        </textarea>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -233,7 +245,7 @@
 <script type="text/javascript" src="js/rollups/aes.js"></script>
 <script type="text/javascript" src="js/rollups/sha1.js"></script>
 <script type="text/javascript" src="js/rollups/hmac-sha256.js"></script>
-<script src="js/gateway.js"></script>
+<script src="js/simple.js"></script>
 
 </body>
 </html>
