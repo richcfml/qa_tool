@@ -77,7 +77,6 @@ Process = function(){
       
     xhr = new XMLHttpRequest();
     xhr.open("POST", endpoint_url, true);
-    xhr.setRequestHeader("Allow-Origin", "*.*");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("x-gge4-date", headers.gge4_date);
     xhr.setRequestHeader("x-gge4-content-sha1",headers.gge4_content_sha1);
