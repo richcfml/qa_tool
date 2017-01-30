@@ -62,7 +62,7 @@ Process = function(){
     
     return {
         gge4_date: gge4_date, 
-        gge4_content_sha256: gge4_content_sha1, 
+        gge4_content_sha1: gge4_content_sha1, 
         authorization: authorization
     };
     
@@ -91,7 +91,7 @@ Process = function(){
     };
     //var data = JSON.stringify({"email":"hey@mail.com","password":"101010"});
     console.log('The data sent is: ' + data);
-    console.log(form_elements.headers)
+    //console.log(form_elements.headers)
     xhr.send();
     //console.log(get_form_elements());
 }
