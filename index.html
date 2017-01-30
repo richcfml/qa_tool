@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Album example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+<div class="navbar navbar-toggleable-md">
+    <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">
+            <img src="images/logo.png" alt="Payeezy Gateway Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+              This tool is only for testing purposes.
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="api_content text-muted">
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <form action="" method="post" name="api_calls" id="api_calls" onsubmit="Process(); return false;">
+                    <div class="card">
+                        <div class="card-header">
+                            Basic API Information
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="url_field">Target URL <small id="urlHelp" class="form-text text-muted">(e.g. https://api.demo.globalgatewaye4.firstdata.com/transaction/v12/)</small></label>
+                                        <input type="text" class="form-control" id="url_field" value="https://api.demo.globalgatewaye4.firstdata.com/transaction/v12/" name="url_field" data-gateway-header-field="url_field" value="LD8898-57">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="gateway_id">Gateway ID <small id="gatewayIDHelp" class="form-text text-muted">Gateway ID from account</small></label>
+                                        <input type="text" class="form-control" id="gateway_id" value="LD8898-57" name="gateway_id" data-gateway-header-field="gateway_id" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="hmac_key">HMAC Key <small id="hmacHelp" class="form-text text-muted">HMAC from the PGW API Calculator.</small></label>
+                                        <input type="text" class="form-control" id="hmac_key" value="~5_4tNY2KQSZKvztWgcTLHlJDvMmY53e" name="hmac_key" data-gateway-header-field="hmac_key" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="password">Password <small id="passwordHelp" class="form-text text-muted">Password from your PGW Account</small></label>
+                                        <input type="text" class="form-control" id="password" value="Ozl6iVGJeyPXNJFEa2R4f3lg7q5bpzzD" name="password" data-gateway-header-field="password" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="key_id">KeyID <small id="keyIDHelp" class="form-text text-muted">Key ID from the PGW API Settings</small></label>
+                                        <input type="text" class="form-control" id="key_id" value="402875" name="key_id" data-gateway-header-field="key_id" required>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>All fields in the above section are required.</small>
+                        </div>
+                    </div><!-- end of header card -->
+                    <div class="card">
+                        <div class="card-header">
+                            Payload Information
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="payload">Payload</label>
+                                        <textarea class="form-control" name="payload" id="payload" data-gateway-field="payload"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 class="card-subtitle mb-2 text-muted">Instructions</h6>
+                                    <p class="card-text">
+                                        Please make sure to copy and paste the entire payload you are ready to submit and that your payload
+                                        is valid JSON format content. Please make sure to include the transaction type.
+                                    </p>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <button type="submit" class="btn btn-primary">Submit Transaction</button>
+                        </div>
+                    </div><!-- end of payload card -->
+                </form>
+            </div><!-- end of container for form -->
+        </div><!-- end of row for header and payload -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Request
+                    </div>
+                    <div class="card-block">
+                        <blockquote class="card-blockquote">
+                            <pre>
+                                <code>
+{
+    "amount": 1,
+    "cardholder_name": "Tester Wendy",
+    "cc_expiry": "0419",
+    "cc_number": "4111111111111111",
+    "gateway_id": "PC8000-94",
+    "password": "BDTEXCme1Viu9DHpvFRGAsZS8LENeA4z",
+    "transaction_type": "01",
+    "cvd_presence_ind": "1",
+    "cvd_code": "123"
+}
+                                </code>
+                                </pre>
+                        </blockquote>
+                    </div>
+                </div><!-- end of request card -->
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Response
+                    </div>
+                    <div class="card-block">
+                        <samp>
+                            <code>
+                                {
+                                    "amount": 1,
+                                    "cardholder_name": "Tester Wendy",
+                                    "cc_expiry": "0419",
+                                    "cc_number": "4111111111111111",
+                                    "gateway_id": "PC8000-94",
+                                    "password": "BDTEXCme1Viu9DHpvFRGAsZS8LENeA4z",
+                                    "transaction_type": "01",
+                                    "cvd_presence_ind": "1",
+                                    "cvd_code": "123"
+                                }
+                            </code>
+                        </samp>
+                    </div>
+                </div><!-- end of response card -->
+            </div>
+        </div><!-- end of row for request and response -->
+    </div><!-- end of main content container -->
+</div><!-- end of api_content div  -->
+
+<footer class="text-muted">
+    <div class="container">
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> | First Data Corporation</p>
+    </div>
+</footer><!-- end of footer -->
+
+<!--<div class="card">
+                        <div class="card-header">
+                            Transaction Information
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="cardholder_name">Cardholder Name</label>
+                                        <input type="text" class="form-control" id="cardholder_name" name="cardholder_name">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="cc_number">Card Number</label>
+                                        <input type="text" class="form-control" id="cc_number" name="cc_number">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="cvv_code">CVV</label>
+                                        <input type="text" class="form-control" id="cvv_code" name="cvv_code">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="datepicker">Exp Date</label>
+                                        <input type="text" id="datepicker" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="amount">Amount</label>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="amount" name="amount">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/form-validation.js"></script>
+<script type="text/javascript" src="js/rollups/aes.js"></script>
+<script type="text/javascript" src="js/rollups/sha256.js"></script>
+<script type="text/javascript" src="js/rollups/hmac-sha256.js"></script>
+<script src="js/gateway.js"></script>
+
+</body>
+</html>
