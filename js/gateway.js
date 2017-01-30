@@ -54,7 +54,7 @@ Process = function(){
     var authorization = authHeader;
     console.log('The HMAC is: ' + authHmac);
     console.log(gge4_date);
-    console.log(gge4_content_sha256);
+    console.log(gge4_content_sha1);
     console.log(authorization);
     
     return {
