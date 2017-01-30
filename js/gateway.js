@@ -42,7 +42,8 @@ Process = function(){
 
     var hashTime = new Date().toISOString();
     var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
-    var path = "/transaction/v12";
+    var parts = endpoint_url.split('/');
+    var path = "/" + parts[3] + "/" + parts[4];
 
     var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
     //var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
@@ -83,7 +84,7 @@ Process = function(){
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json.amount + ", " + json.password);
+            //console.log(json.amount + ", " + json.password);
         }
     };
     //var data = JSON.stringify({"email":"hey@mail.com","password":"101010"});
