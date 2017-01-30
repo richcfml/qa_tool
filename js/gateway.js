@@ -70,7 +70,7 @@ Process = function(){
     var endpoint_url = form_elements.headers.url_field;
     var headers = create_headers(form_elements.headers, endpoint_url, form_elements.payload);
     var method = "POST";
-    var data = JSON.stringify(form_elements.payload);
+    var data = form_elements.payload;
       
     xhr = new XMLHttpRequest();
     xhr.open("POST", endpoint_url, true);
