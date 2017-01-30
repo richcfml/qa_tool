@@ -52,6 +52,9 @@ Process = function(){
     var gge4_date =  hashTime;
     var gge4_content_sha256 = contentHash;
     var authorization = authHeader;
+    console.log(gge4_date);
+    console.log(gge4_content_sha256);
+    console.log(authorization);
     
     return {
         gge4_date: gge4_date, 
