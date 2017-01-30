@@ -31,21 +31,21 @@ Process = function(){
     var password    = elements.password;
     var key_id      = elements.key_id;
     var hmac_key    = elements.hmac_key;
-    var myJsonString = JSON.stringify(data);
+    var myJsonString = data;
     
-    console.log(gateway_id);
-    console.log(password);
-    console.log(key_id);
-    console.log(hmac_key);
-    console.log(endpoint_url);
-    console.log(myJsonString);
+    //console.log(gateway_id);
+    //console.log(password);
+    //console.log(key_id);
+    //console.log(hmac_key);
+    //console.log(endpoint_url);
+    //console.log(myJsonString);
 
     var hashTime = new Date().toISOString();
     var contentHash = CryptoJS.SHA1(myJsonString).toString(CryptoJS.enc.Hex);
     var parts = endpoint_url.split('/');
     var path = "/" + parts[3] + "/" + parts[4];
-    console.log('The path is: ' + path);
-    console.log('The contentHash is: ' + contentHash);
+    //console.log('The path is: ' + path);
+    //console.log('The contentHash is: ' + contentHash);
 
     //var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
     var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
@@ -56,9 +56,9 @@ Process = function(){
     var gge4_content_sha1 = contentHash;
     var authorization = authHeader;
     console.log('The HMAC is: ' + authHmac);
-    console.log(gge4_date);
-    console.log(gge4_content_sha1);
-    console.log(authorization);
+    console.log('The Date is ' + gge4_date);
+    console.log('The content hash is ' + gge4_content_sha1);
+    console.log('The authorization is ' + authorization);
     
     return {
         gge4_date: gge4_date, 
@@ -90,7 +90,7 @@ Process = function(){
         }
     };
     //var data = JSON.stringify({"email":"hey@mail.com","password":"101010"});
-    console.log('The data sent is: ' + data);
+    //console.log('The data sent is: ' + data);
     //console.log(form_elements.headers)
     xhr.send();
     //console.log(get_form_elements());
