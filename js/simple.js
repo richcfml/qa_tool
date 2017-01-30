@@ -23,6 +23,7 @@ Process = function(){
     xhr = new XMLHttpRequest();
     xhr.open("POST", apiurl, true);
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Custom-Header");
     xhr.setRequestHeader("x-gge4-date", hashTime);
     xhr.setRequestHeader("x-gge4-content-sha1",contentHash);
     xhr.setRequestHeader("Authorization",authHeader);   
