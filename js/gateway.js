@@ -31,7 +31,7 @@ Process = function(){
     var password    = elements.password;
     var key_id      = elements.key_id;
     var hmac_key    = elements.hmac_key;
-    var myJsonString = JSON.stringify(data);
+    var myJsonString = data;
     
     //console.log(gateway_id);
     //console.log(password);
@@ -71,7 +71,7 @@ Process = function(){
 
     var form_elements = get_form_elements();
     var endpoint_url = form_elements.headers.url_field;
-    var headers = create_headers(form_elements.headers, endpoint_url, form_elements.payload);
+    var headers = create_headers(form_elements.headers, endpoint_url, JSON.stringify(form_elements.payload));
     var method = "POST";
     var data = JSON.stringify(form_elements.payload);
       
