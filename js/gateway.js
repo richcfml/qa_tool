@@ -47,7 +47,7 @@ Process = function(){
     //var authString = "POST" + "\n" + "Content-Type" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;
     var authString = "POST" + "\n" + "application/json" + "\n" + contentHash + "\n" + hashTime + "\n"+ path;    
     var authHmac = CryptoJS.HmacSHA256(authString, hmac_key).toString(CryptoJS.enc.Base64);
-    var authHeader = "GGE4_API " + key_id + ":" + authHmac;
+    var authHeader = "GGE4_API" + key_id + ":" + authHmac;
 
     var gge4_date =  hashTime;
     var gge4_content_sha256 = contentHash;
